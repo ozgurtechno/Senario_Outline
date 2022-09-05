@@ -9,21 +9,25 @@ public class stepDefinitions {
 
     private String testPalindrome;
     private boolean isPalindrome;
-    @Given("I entered string {string}")
-    public void i_entered_string(String toTest) {
-        testPalindrome = toTest;
+
+    @Given("I entered word {string}")
+    public void i_entered_word(String string) {
+        testPalindrome = string;
     }
+
     @When("I test it for Palindrome")
     public void i_test_it_for_palindrome() {
         isPalindrome = testPalindrome.equalsIgnoreCase(new StringBuilder(testPalindrome).reverse().toString());
     }
-    @Then("the result should be {string}")
-    public void the_result_should_be(String result) {
-        boolean expectedResult = Boolean.parseBoolean(result);
+
+    @Then("the output should be {string}")
+    public void the_output_should_be(String string) {
+        boolean expectedResult = Boolean.parseBoolean(string);
         if (expectedResult) {
             Assert.assertTrue(isPalindrome);
         } else {
             Assert.assertFalse(isPalindrome);
         }
+
     }
 }

@@ -7,10 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class stepdefinitions {
 
@@ -24,7 +21,7 @@ public class stepdefinitions {
     }
 
     @Given("I have the following books in the store")
-    public void i_have_the_following_books_in_the_store(io.cucumber.datatable.DataTable dataTable) {
+    public void i_have_the_following_books_in_the_store(DataTable dataTable) {
         List<List<String>> rows = dataTable.asLists(String.class);
 
         for (List<String> columns : rows) {
@@ -50,4 +47,17 @@ public class stepdefinitions {
 //            store.addBook(new Book(columns.get("title"), columns.get("author")));
 //        }
 //    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
